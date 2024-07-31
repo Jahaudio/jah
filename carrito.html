@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Silent Cables</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#producto">Producto</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="cart-item">
+                <img src="images/producto.jpg" alt="Producto Silent Cables" class="cart-image">
+                <div class="cart-details">
+                    <h3>Cable Silent Mutant Premium</h3>
+                    <p>Precio: $60.000</p>
+                    <p>Cantidad: <input type="number" value="1" min="1" max="10"></p>
+                    <button class="btn-remove">Eliminar</button>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <h3>Resumen del Pedido</h3>
+                <p>Total: $60.000</p>
+                <button id="checkout-button" class="btn">Proceder al Pago</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Silent Cables. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const mp = new MercadoPago('TU_PUBLIC_KEY', {
+            locale: 'es-AR'
+        });
+
+        document.getElementById('checkout-button').addEventListener('click', function() {
+            fetch('https://api.mercadopago.com/checkout/preferences', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer TU_ACCESS_TOKEN'
+                },
+                body: JSON.stringify({
+                    items: [
+                        {
+                            title: 'Cable Silent Mutant Premium',
+                            quantity: 1,
+                            unit_price: 60000
+                        }
+                    ]
+                })
+            })
+            .then(response => response.json())
+            .then(preference => {
+                mp.checkout({
+                    preference: {
+                        id: preference.id
+                    }
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

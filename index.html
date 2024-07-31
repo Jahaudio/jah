@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Cables - Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#producto">Producto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="banner">
+        <img src="images/banner.jpg" alt="Banner Silent Cables">
+        <div class="banner-text">
+            <img src="images/Jah.png" alt="JAH" class="banner-logo">
+            <p>Cables con tecnología<br>SILENT</p>
+        </div>
+    </section>
+    <main>
+        <section id="producto">
+            <h2>Producto Destacado</h2>
+            <div class="product-card">
+                <img src="images/producto1.jpg" alt="Producto Silent Cables 1" class="product-image">
+                <h3>Silent Mutant Premium</h3>
+                <p>Silent Plug con cable silent reforzado color verde fluor.</p>
+                <p>$60.000</p>
+                <a href="carrito.html" class="btn">Agregar al Carrito</a>
+            </div>
+        </section>
+        <section id="otros-productos">
+            <h2>Otros Productos</h2>
+            <div class="other-products">
+                <div class="other-product-card">
+                    <img src="images/other-product1.jpg" alt="Otro Producto 1" class="other-product-image">
+                    <h3>Basic</h3>
+                    <p>Plug estándar con cable básico de color negro.</p>
+                    <p>$30.000</p>
+                    <a href="carrito.html" class="btn">Agregar al Carrito</a>
+                </div>
+                <div class="other-product-card">
+                    <img src="images/other-product2.jpg" alt="Otro Producto 2" class="other-product-image">
+                    <h3>Medium Pro</h3>
+                    <p>Cable silent reforzado y ficha pro estándar.</p>
+                    <p>$50.000</p>
+                    <a href="carrito.html" class="btn">Agregar al Carrito</a>
+                </div>
+            </div>
+        </section>
+        <section id="disena-tu-cable">
+            <h2>Diseñá tu cable</h2>
+            <form id="cable-form">
+                <div class="form-group">
+                    <label>Tipo de ficha:</label>
+                    <label><input type="radio" name="ficha" value="Silent"> Silent</label>
+                    <label><input type="radio" name="ficha" value="Estándar"> Estándar</label>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de cable:</label>
+                    <label><input type="radio" name="cable" value="Anti-ruido"> Anti-ruido</label>
+                    <label><input type="radio" name="cable" value="Balanceado"> Balanceado</label>
+                    <label><input type="radio" name="cable" value="Estándar"> Estándar</label>
+                </div>
+                <div class="form-group">
+                    <label>Largo:</label>
+                    <label><input type="radio" name="largo" value="3 metros"> 3 metros</label>
+                    <label><input type="radio" name="largo" value="6 metros"> 6 metros</label>
+                    <label><input type="radio" name="largo" value="10 metros"> 10 metros (solo balanceado/anti-ruido)</label>
+                    <label><input type="radio" name="largo" value="14 metros"> 14 metros (solo balanceado/anti-ruido)</label>
+                </div>
+                <div class="form-group">
+                    <label>Color:</label>
+                    <label><input type="radio" name="color" value="Verde (Mutant)"> Verde (Mutant)</label>
+                    <label><input type="radio" name="color" value="Rosa (Cherry Pink)"> Rosa (Cherry Pink)</label>
+                    <label><input type="radio" name="color" value="Violeta (UV Berry)"> Violeta (UV Berry)</label>
+                    <label><input type="radio" name="color" value="Negro (Classic)"> Negro (Classic)</label>
+                </div>
+                <button type="submit" class="btn">Agregar al Carrito</button>
+            </form>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Email: <a href="mailto:jah.audio.contact@gmail.com">jah.audio.contact@gmail.com</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/jah.audio" target="_blank">@jah.audio</a></p>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Silent Cables. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
